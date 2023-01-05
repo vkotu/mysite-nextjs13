@@ -8,6 +8,11 @@ type Data = {
 export default function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
-) {
-  res.status(200).json({ name: 'John Doe' })
+  ) {
+    if(req.method === 'POST') {
+      // save to DB
+      console.log(req.body);
+      res.status(200).json({ message: 'ok' })
+    }
+  
 }

@@ -1,5 +1,6 @@
-export default  function Post() {
+export default function Post ({params}){
+    console.log(params)
     return (
-        <p>Post</p>
+        <div>{params.slug[0]}</div>
     )
 }
